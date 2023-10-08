@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""lockboxes"""
+"""lockboxes problem module"""
 
 
 def extract_keys(box_keys, boxes):
     """extract keys from boxes"""
     found = list(box_keys)
     for key in found:
-        if key > len(boxes):
+        if key >= len(boxes):
             continue
         for i in boxes[key]:
             if i not in found:
@@ -14,7 +14,7 @@ def extract_keys(box_keys, boxes):
     return found
 
 
-def canUnlockAll(boxes: list[list[int]]):
+def canUnlockAll(boxes):
     """checks if a list of boxes can all be unlocked"""
     keys = []
     locked_boxes = [i for i in range(1, len(boxes))]
