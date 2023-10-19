@@ -36,4 +36,3 @@ if __name__ == '__main__':
             i += 1
     except KeyboardInterrupt as ki:
         print_stats(filesize, status_codes)
-        raise ki
