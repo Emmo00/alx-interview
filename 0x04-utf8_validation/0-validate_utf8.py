@@ -13,9 +13,6 @@ def validUTF8(data):
                 if data[i] > 224:
                     if data[i + 2] >= 192:
                         return False
-                    if data[i] > 240:
-                        if data[i + 3] >= 192:
-                            return False
     except IndexError:
         return False
     return True
