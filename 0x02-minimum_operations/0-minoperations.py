@@ -21,6 +21,10 @@ def minOperations(n: int) -> int:
     """
     calculate the minimum operations
     """
+    if n == 1:
+        return 0
+    if n <= 0:
+        return 0
     min_factors, max_factors = factors(n)
     if min_factors == 1:
         return max_factors
