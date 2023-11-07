@@ -16,7 +16,6 @@ request(
         request(
           `https://swapi-api.alx-tools.com/api/people/${id}`,
           (error, res, character) => {
-            console.log(characterIds)
             if (error) console.error(error);
             console.log(JSON.parse(character).name);
           }
