@@ -11,9 +11,7 @@ def rotate_2d_matrix(matrix):
     for i in range(rows):
         for j in range(rows):
             if not((i, j) in rotated or (j, i) in rotated):
-                tmp = matrix[i][j]
-                matrix[i][j] = matrix[j][i]
-                matrix[j][i] = tmp
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
                 rotated.add((i, j))
                 rotated.add((j, i))
     for i in range(rows):
