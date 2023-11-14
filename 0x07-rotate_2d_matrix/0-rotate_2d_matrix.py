@@ -3,7 +3,7 @@
 """
 
 
-def rotate_2d_matrix(matrix: list[list]):
+def rotate_2d_matrix(matrix):
     """rotate 2d matrix
     """
     rows = len(matrix)
