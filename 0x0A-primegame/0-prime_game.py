@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """module
 """
+
+
 def isPrime(number):
     limit = number // 2
     for i in range(limit):
@@ -14,6 +16,7 @@ def lowest_prime_number(numbers):
     for i in sorted_numbers:
         if isPrime(i):
             return i
+    raise Exception('No Prime number found')
 
 
 def toggle_turn(current_player):
@@ -47,7 +50,7 @@ def isWinner(x, nums):
                     numbers.remove(choice * j)
                 j += 1
             turn = toggle_turn(turn)
-        except:
+        except Exception:
             # other person wins round
             turn = toggle_turn(turn)
             players[turn] += 1
