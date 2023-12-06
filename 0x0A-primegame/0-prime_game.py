@@ -4,26 +4,38 @@
 
 
 def isPrime(number):
+    """is prime
+    """
+    if number == 1:
+        return False
     limit = number // 2
-    for i in range(limit):
+    for i in range(1, limit):
+        if i == 1:
+            continue
         if number / i == number // i:
             return False
     return True
 
 
 def lowest_prime_number(numbers):
+    """lowest prime number
+    """
     sorted_numbers = sorted(numbers)
     for i in sorted_numbers:
         if isPrime(i):
             return i
-    raise Exception('No Prime number found')
+    return None
 
 
 def toggle_turn(current_player):
+    """toggle turn
+    """
     return 'Ben' if current_player == 'Maria' else 'Maria'
 
 
 def winner(players: dict):
+    """winner
+    """
     keys = list(players.keys())
     values = list(players.values())
     max_player = max(values)
@@ -40,16 +52,19 @@ def isWinner(x, nums):
     }
     for round in range(x):
         turn = 'Maria'
-        numbers = list(range(1, round + 1))
+        numbers = list(range(1, nums[round] + 1))
         try:
-            choice = lowest_prime_number(numbers)
-            # remove multiples
-            j = 1
-            while j < max(numbers):
-                if choice * j in numbers:
-                    numbers.remove(choice * j)
-                j += 1
-            turn = toggle_turn(turn)
+            while True:
+                choice = lowest_prime_number(numbers)
+                if choice is None:
+                    raise Exception()
+                # remove multiples
+                j = 1
+                while j < max(numbers):
+                    if choice * j in numbers:
+                        numbers.remove(choice * j)
+                    j += 1
+                turn = toggle_turn(turn)
         except Exception:
             # other person wins round
             turn = toggle_turn(turn)
