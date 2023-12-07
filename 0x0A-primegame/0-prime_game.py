@@ -50,6 +50,9 @@ def isWinner(x, nums):
     """
     if x <= 0 or not nums:
         return None
+    nums = [i for i in nums if i >= 1]
+    if x < len(nums):
+        return None
     players = {
         'Maria': 0,
         'Ben': 0,
@@ -66,7 +69,7 @@ def isWinner(x, nums):
                     raise Exception()
                 # remove multiples
                 j = 1
-                while j < max(numbers):
+                while j <= max(numbers):
                     if choice * j in numbers:
                         numbers.remove(choice * j)
                     j += 1
