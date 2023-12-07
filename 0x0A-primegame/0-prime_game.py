@@ -38,6 +38,8 @@ def winner(players: dict):
     """
     keys = list(players.keys())
     values = list(players.values())
+    if values[0] == values[1]:
+        return None
     max_player = max(values)
     winner_index = values.index(max_player)
     return keys[winner_index]
@@ -46,6 +48,8 @@ def winner(players: dict):
 def isWinner(x, nums):
     """prime game
     """
+    if x <= 0 or not nums:
+        return None
     players = {
         'Maria': 0,
         'Ben': 0,
