@@ -60,7 +60,7 @@ def isWinner(x, nums):
             continue
         numbers = list(range(1, nums[round] + 1))
         try:
-            while True:
+            while numbers:
                 choice = lowest_prime_number(numbers)
                 if choice is None:
                     raise Exception()
