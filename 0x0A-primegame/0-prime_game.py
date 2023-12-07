@@ -65,11 +65,7 @@ def isWinner(x, nums):
                 if choice is None:
                     raise Exception()
                 # remove multiples
-                j = 1
-                while j <= max(numbers):
-                    if choice * j in numbers:
-                        numbers.remove(choice * j)
-                    j += 1
+                numbers = [num for num in numbers if num % choice != 0]
                 turn = toggle_turn(turn)
         except Exception:
             # other person wins round
