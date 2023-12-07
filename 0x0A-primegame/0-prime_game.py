@@ -56,6 +56,8 @@ def isWinner(x, nums):
     }
     for round in range(x):
         turn = 'Maria'
+        if nums[round] < 1:
+            continue
         numbers = list(range(1, nums[round] + 1))
         try:
             while True:
