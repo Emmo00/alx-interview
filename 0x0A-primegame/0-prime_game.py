@@ -9,10 +9,8 @@ def isPrime(number):
     if number == 1:
         return False
     limit = number // 2
-    for i in range(1, limit):
-        if i == 1:
-            continue
-        if number / i == number // i:
+    for i in range(2, limit):
+        if number % i == 0:
             return False
     return True
 
