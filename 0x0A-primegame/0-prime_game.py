@@ -50,7 +50,6 @@ def isWinner(x, nums):
     """
     if x <= 0 or not nums:
         return None
-    nums = [i for i in nums if i >= 1]
     if x < len(nums):
         return None
     players = {
